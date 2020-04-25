@@ -1,0 +1,13 @@
+/home/paulinlenasaein/NetBeansProjects/psv/smart-calc-administration-manager/src/main/java/com/vetisolutions/smartcal/administrationmanager/resource/ClasseResource.java
+/home/paulinlenasaein/NetBeansProjects/psv/smart-calc-administration-manager/src/main/java/com/vetisolutions/smartcal/administrationmanager/resource/UtilisateurResource.java
+/home/paulinlenasaein/NetBeansProjects/psv/smart-calc-administration-manager/src/main/java/com/vetisolutions/smartcal/administrationmanager/dao/IUtilisateurDao.java
+/home/paulinlenasaein/NetBeansProjects/psv/smart-calc-administration-manager/src/main/java/com/vetisolutions/smartcal/administrationmanager/dao/IEnseignantDao.java
+/home/paulinlenasaein/NetBeansProjects/psv/smart-calc-administration-manager/src/main/java/com/vetisolutions/smartcal/administrationmanager/SmartCalcAdministrationManagerApplication.java
+/home/paulinlenasaein/NetBeansProjects/psv/smart-calc-administration-manager/src/main/java/com/vetisolutions/smartcal/administrationmanager/SwaggerConfig/configurationSwaggerAdministration.java
+/home/paulinlenasaein/NetBeansProjects/psv/smart-calc-administration-manager/src/main/java/com/vetisolutions/smartcal/administrationmanager/service/UtilisateurService.java
+/home/paulinlenasaein/NetBeansProjects/psv/smart-calc-administration-manager/src/main/java/com/vetisolutions/smartcal/administrationmanager/dao/IClasseDao.java
+/home/paulinlenasaein/NetBeansProjects/psv/smart-calc-administration-manager/src/main/java/com/vetisolutions/smartcal/administrationmanager/service/EnseignantService.java
+/home/paulinlenasaein/NetBeansProjects/psv/smart-calc-administration-manager/src/main/java/com/vetisolutions/smartcal/administrationmanager/resource/MyConfigAdministration.java
+/home/paulinlenasaein/NetBeansProjects/psv/smart-calc-administration-manager/src/main/java/com/vetisolutions/smartcal/administrationmanager/SwaggerConfig/CombinedResourceProviderConfigAdministration.java
+/home/paulinlenasaein/NetBeansProjects/psv/smart-calc-administration-manager/src/main/java/com/vetisolutions/smartcal/administrationmanager/resource/EnseignantResource.java
+/home/paulinlenasaein/NetBeansProjects/psv/smart-calc-administration-manager/src/main/java/com/vetisolutions/smartcal/administrationmanager/service/ClasseService.java

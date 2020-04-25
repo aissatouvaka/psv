@@ -1,0 +1,13 @@
+com/vetisolutions/smartcal/administrationmanager/resource/UtilisateurResource.class
+com/vetisolutions/smartcal/administrationmanager/service/UtilisateurService.class
+com/vetisolutions/smartcal/administrationmanager/service/EnseignantService.class
+com/vetisolutions/smartcal/administrationmanager/resource/MyConfigAdministration.class
+com/vetisolutions/smartcal/administrationmanager/SwaggerConfig/CombinedResourceProviderConfigAdministration.class
+com/vetisolutions/smartcal/administrationmanager/SwaggerConfig/configurationSwaggerAdministration.class
+com/vetisolutions/smartcal/administrationmanager/dao/IUtilisateurDao.class
+com/vetisolutions/smartcal/administrationmanager/resource/ClasseResource.class
+com/vetisolutions/smartcal/administrationmanager/dao/IEnseignantDao.class
+com/vetisolutions/smartcal/administrationmanager/service/ClasseService.class
+com/vetisolutions/smartcal/administrationmanager/resource/EnseignantResource.class
+com/vetisolutions/smartcal/administrationmanager/SmartCalcAdministrationManagerApplication.class
+com/vetisolutions/smartcal/administrationmanager/dao/IClasseDao.class

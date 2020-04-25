@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.vetisolutions.smartcal.studentmanager.smartcalcstudentmanager.SmartCalcStudentManagerApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 31.01 s - in com.vetisolutions.smartcal.studentmanager.smartcalcstudentmanager.SmartCalcStudentManagerApplicationTests
