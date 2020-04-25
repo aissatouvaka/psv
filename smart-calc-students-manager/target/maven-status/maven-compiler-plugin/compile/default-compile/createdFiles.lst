@@ -1,7 +1,0 @@
-com/vetisolutions/smartcal/studentmanager/smartcalcstudentmanager/SmartCalcStudentManagerApplication.class
-com/vetisolutions/smartcal/studentmanager/service/EleveService.class
-com/vetisolutions/smartcal/studentmanager/resource/EleveResource.class
-com/vetisolutions/smartcal/studentmanager/SwaggerConfig/CombinedResourceProviderConfigStudent.class
-com/vetisolutions/smartcal/studentmanager/resource/MyConfigStudent.class
-com/vetisolutions/smartcal/studentmanager/SwaggerConfig/configurationSwaggerStudent.class
-com/vetisolutions/smartcal/studentmanager/dao/IEleveDao.class
