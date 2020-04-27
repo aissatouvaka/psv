@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-@ApplicationPath("vetisolutions")
+@ApplicationPath("/vetisolutions")
 public class MyConfigStudent extends ResourceConfig{
     
     public MyConfigStudent(){
