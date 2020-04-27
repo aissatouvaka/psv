@@ -6,6 +6,7 @@
 package com.vetisolutions.smartcal.studentmanager.resource;
 
 import com.vetisolutions.smartcal.studentmanager.service.EleveService;
+import com.vetisolutions.smartcal.studentmanager.smartcalcstudentmanager.utils.UtilsService;
 import com.vetisolutions.smartcalc.entities.Eleve;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -41,6 +42,9 @@ public class EleveResource {
     @Autowired
     public EleveService eleveService;
     
+    @Autowired
+    private UtilsService utilsService;
+    
     @ApiOperation(value = "Add a student ", response = Response.class)
     @ApiResponses(value = {
         @ApiResponse(code = 200, message = "Student added successfully"),
@@ -74,8 +78,9 @@ public class EleveResource {
     @GET
     @Path("/date/{birthDate}")
     @Produces(value = MediaType.APPLICATION_JSON)
-    public Page<Eleve> returnAllByBirthDate(@PathParam("date") Date birthDate, @DefaultValue("0") @QueryParam("from")int from, @DefaultValue("50") @QueryParam("to")int to){
-        return eleveService.findAllByBirthDate(birthDate, from, to);
+    public Page<Eleve> returnAllByBirthDate(@PathParam("date") String birthDate, @DefaultValue("0") @QueryParam("from")int from, @DefaultValue("50") @QueryParam("to")int to){
+        Date date = utilsService.convertStringToDate(birthDate);
+        return eleveService.findAllByBirthDate(date, from, to);
     }
     
     @ApiOperation(value = "Displays the list of students with a specific place of birth", response = Page.class)
@@ -122,8 +127,9 @@ public class EleveResource {
     @GET
     @Path("/dateplace/{birthDate}/{birthPlace}")
     @Produces(value = MediaType.APPLICATION_JSON)
-    public Page<Eleve> returnAllByBirthDateAndBirthPlace(@PathParam("date") Date birthDate, @PathParam("place") String birthPlace, @DefaultValue("0") @QueryParam("from")int from, @DefaultValue("50") @QueryParam("to")int to){
-        return eleveService.findAllByBirthDateAndBirthPlace(birthDate, birthPlace, from, to);
+    public Page<Eleve> returnAllByBirthDateAndBirthPlace(@PathParam("date") String birthDate, @PathParam("place") String birthPlace, @DefaultValue("0") @QueryParam("from")int from, @DefaultValue("50") @QueryParam("to")int to){
+        Date date = utilsService.convertStringToDate(birthDate);
+        return eleveService.findAllByBirthDateAndBirthPlace(date, birthPlace, from, to);
     }
     
     @ApiOperation(value = "Allows you to modify the characteristics of a student", response = Response.class)

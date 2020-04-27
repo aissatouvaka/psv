@@ -1,1 +1,32 @@
-/target/
+HELP.md
+smart-calc-administration-manager/target/
+smart-calc-entities/target/
+smart-calc-students-manager/target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
+### NetBeans ###
+smart-calc-administration-manager/nbproject/private/
+smart-calc-administration-manager/nbbuild/
+smart-calc-administration-manager/dist/
+smart-calc-administration-manager/nbdist/
+smart-calc-administration-manager/.nb-gradle/
+smart-calc-administration-manager/build/
+
+smart-calc-entities/nbproject/private/
+smart-calc-entities/nbbuild/
+smart-calc-entities/dist/
+smart-calc-entities/nbdist/
+smart-calc-entities/.nb-gradle/
+smart-calc-entities/build/
+
+smart-calc-students-manager/nbproject/private/
+smart-calc-students-manager/nbbuild/
+smart-calc-students-manager/dist/
+smart-calc-students-manager/nbdist/
+smart-calc-students-manager/.nb-gradle/
+smart-calc-students-manager/build/
+
+### VS Code ###
+.vscode/

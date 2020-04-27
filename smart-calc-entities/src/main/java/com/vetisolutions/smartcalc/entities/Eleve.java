@@ -7,6 +7,7 @@ package com.vetisolutions.smartcalc.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.vetisolutions.smartcalc.entities.enumeration.Gender;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Column;
@@ -15,6 +16,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -29,7 +32,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @Entity
-public class Eleve {
+public class Eleve implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -44,7 +47,7 @@ public class Eleve {
     @Column
     private Gender gender;
     
-    @Column
+    @Temporal(TemporalType.DATE)
     private Date birthDate;
     
     @Column

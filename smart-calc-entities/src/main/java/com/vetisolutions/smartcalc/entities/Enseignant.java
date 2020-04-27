@@ -5,6 +5,7 @@
  */
 package com.vetisolutions.smartcalc.entities;
 
+import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,7 +24,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 @Entity
-public class Enseignant extends Utilisateur {
+public class Enseignant extends Utilisateur implements Serializable {
     
     @Column
     private String speciality;

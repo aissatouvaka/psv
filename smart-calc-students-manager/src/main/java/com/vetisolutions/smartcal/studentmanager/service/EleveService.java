@@ -40,15 +40,15 @@ public class EleveService {
     }
     
     public Page<Eleve> findAllByBirthDate(Date birthDate, int from, int to){
-        return eleveDao.findByBirthDate(birthDate, PageRequest.of(from, to, Sort.by(Sort.Direction.DESC, "date")));
+        return eleveDao.findByBirthDate(birthDate, PageRequest.of(from, to, Sort.by(Sort.Direction.DESC, "birthDate")));
     }
     
     public Page<Eleve> findAllByBirthPlace(String birthPlace, int from, int to){
-        return eleveDao.findByBirthPlace(birthPlace, PageRequest.of(from, to, Sort.by(Sort.Direction.DESC, "date")));
+        return eleveDao.findByBirthPlace(birthPlace, PageRequest.of(from, to, Sort.by(Sort.Direction.DESC, "birthDate")));
     }
     
     public Page<Eleve> findAllByTutorName(String tutorName, int from, int to){
-        return eleveDao.findByTutorName(tutorName, PageRequest.of(from, to, Sort.by(Sort.Direction.DESC, "nom")));
+        return eleveDao.findByTutorName(tutorName, PageRequest.of(from, to, Sort.by(Sort.Direction.DESC, "firstname")));
     }
     
     public Eleve findOneByRegisterNumber(String registerNumber){
@@ -56,7 +56,7 @@ public class EleveService {
     }
     
     public Page<Eleve> findAllByBirthDateAndBirthPlace(Date birthDate, String birthPlace, int from, int to){
-        return eleveDao.findByBirthDateAndBirthPlace(birthDate, birthPlace, PageRequest.of(from, to, Sort.by(Sort.Direction.DESC, "date", "place")));
+        return eleveDao.findByBirthDateAndBirthPlace(birthDate, birthPlace, PageRequest.of(from, to, Sort.by(Sort.Direction.DESC, "birthDate", "birthPlace")));
     }
     
     public void delete(long id){
