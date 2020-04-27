@@ -1,4 +1,4 @@
-package com.vetisolutions.smartcal.studentmanager.smartcalcstudentmanager.utils;
+package com.vetisolutions.smartcal.studentmanager.utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

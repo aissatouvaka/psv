@@ -6,7 +6,7 @@
 package com.vetisolutions.smartcal.studentmanager.resource;
 
 import com.vetisolutions.smartcal.studentmanager.service.EleveService;
-import com.vetisolutions.smartcal.studentmanager.smartcalcstudentmanager.utils.UtilsService;
+import com.vetisolutions.smartcal.studentmanager.utils.UtilsService;
 import com.vetisolutions.smartcalc.entities.Eleve;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -76,9 +76,9 @@ public class EleveResource {
         @ApiResponse(code = 403, message = "Failed student list!")
     })
     @GET
-    @Path("/date/{birthDate}")
+    @Path("/birthdate/{birthDate}")
     @Produces(value = MediaType.APPLICATION_JSON)
-    public Page<Eleve> returnAllByBirthDate(@PathParam("date") String birthDate, @DefaultValue("0") @QueryParam("from")int from, @DefaultValue("50") @QueryParam("to")int to){
+    public Page<Eleve> returnAllByBirthDate(@PathParam("birthDate") String birthDate, @DefaultValue("0") @QueryParam("from")int from, @DefaultValue("50") @QueryParam("to")int to){
         Date date = utilsService.convertStringToDate(birthDate);
         return eleveService.findAllByBirthDate(date, from, to);
     }
@@ -89,10 +89,10 @@ public class EleveResource {
         @ApiResponse(code = 403, message = "Failed student list!")
     })
     @GET
-    @Path("/date/{birthDate}")
+    @Path("/birthplace/{place}")
     @Produces(value = MediaType.APPLICATION_JSON)
-    public Page<Eleve> returnAllByBirthPlace(@PathParam("place") String birthPlace, @DefaultValue("0") @QueryParam("from")int from, @DefaultValue("50") @QueryParam("to")int to){
-        return eleveService.findAllByBirthPlace(birthPlace, from, to);
+    public Page<Eleve> returnAllByBirthPlace(@PathParam("place") String place, @DefaultValue("0") @QueryParam("from")int from, @DefaultValue("50") @QueryParam("to")int to){
+        return eleveService.findAllByBirthPlace(place, from, to);
     }
     
     @ApiOperation(value = "Displays the list of students with the specified tutor name", response = Page.class)
@@ -103,7 +103,7 @@ public class EleveResource {
     @GET
     @Path("/tutor/{tutorName}")
     @Produces(value = MediaType.APPLICATION_JSON)
-    public Page<Eleve> returnAllByTutorName(@PathParam("tutor") String tutorName, @DefaultValue("0") @QueryParam("from")int from, @DefaultValue("50") @QueryParam("to")int to){
+    public Page<Eleve> returnAllByTutorName(@PathParam("tutorName") String tutorName, @DefaultValue("0") @QueryParam("from")int from, @DefaultValue("50") @QueryParam("to")int to){
         return eleveService.findAllByTutorName(tutorName, from, to);
     }
     
@@ -115,7 +115,7 @@ public class EleveResource {
     @GET
     @Path("/number/{registerNumber}")
     @Produces(value = MediaType.APPLICATION_JSON)
-    public Eleve returnOneByRegisterNumber(@PathParam("number") String registerNumber){
+    public Eleve returnOneByRegisterNumber(@PathParam("registerNumber") String registerNumber){
         return eleveService.findOneByRegisterNumber(registerNumber);
     }
     
@@ -127,7 +127,7 @@ public class EleveResource {
     @GET
     @Path("/dateplace/{birthDate}/{birthPlace}")
     @Produces(value = MediaType.APPLICATION_JSON)
-    public Page<Eleve> returnAllByBirthDateAndBirthPlace(@PathParam("date") String birthDate, @PathParam("place") String birthPlace, @DefaultValue("0") @QueryParam("from")int from, @DefaultValue("50") @QueryParam("to")int to){
+    public Page<Eleve> returnAllByBirthDateAndBirthPlace(@PathParam("birthDate") String birthDate, @PathParam("birthPlace") String birthPlace, @DefaultValue("0") @QueryParam("from")int from, @DefaultValue("50") @QueryParam("to")int to){
         Date date = utilsService.convertStringToDate(birthDate);
         return eleveService.findAllByBirthDateAndBirthPlace(date, birthPlace, from, to);
     }

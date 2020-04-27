@@ -1,4 +1,4 @@
-package com.vetisolutions.smartcal.studentmanager.smartcalcstudentmanager;
+package com.vetisolutions.smartcal.studentmanager;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
