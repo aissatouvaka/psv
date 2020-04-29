@@ -6,7 +6,9 @@
 package com.vetisolutions.smartcal.administrationmanager.service;
 
 import com.vetisolutions.smartcal.administrationmanager.dao.IUtilisateurDao;
+import com.vetisolutions.smartcalc.entities.Enseignant;
 import com.vetisolutions.smartcalc.entities.Utilisateur;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -27,6 +29,15 @@ public class UtilisateurService {
     
     public Utilisateur create(Utilisateur u){
         return utilisateurDao.save(u);
+    }
+    
+    public Utilisateur findOneById(Long id){
+        Optional<Utilisateur> optUser = utilisateurDao.findById(id);
+        if(optUser != null){
+            return optUser.get();
+        }
+        
+        return null;
     }
     
     public Utilisateur update(Utilisateur u){

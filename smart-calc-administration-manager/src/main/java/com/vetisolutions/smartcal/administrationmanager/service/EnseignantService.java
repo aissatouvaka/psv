@@ -7,6 +7,7 @@ package com.vetisolutions.smartcal.administrationmanager.service;
 
 import com.vetisolutions.smartcal.administrationmanager.dao.IEnseignantDao;
 import com.vetisolutions.smartcalc.entities.Enseignant;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -31,6 +32,15 @@ public class EnseignantService {
     }
     public Page<Enseignant> findAll(int from, int to){
         return enseignantDao.findAll(PageRequest.of(from, to, Sort.by(Sort.Direction.ASC, "id")));
+    }
+    
+    public Enseignant findOneById(Long id){
+        Optional<Enseignant> optEns = enseignantDao.findById(id);
+        if(optEns != null){
+            return optEns.get();
+        }
+        
+        return null;
     }
     
     public Enseignant update(Enseignant en){

@@ -5,14 +5,15 @@
  */
 package com.vetisolutions.smartcalc.entities;
 
-import java.util.List;
+import java.io.Serializable;
+//import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+//import javax.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,7 +28,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @Entity
-public class Ecole {
+public class Ecole implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -69,10 +70,10 @@ public class Ecole {
     @ManyToOne
     private TypeEtablissement typeEtablissement;
     
-    @OneToMany(mappedBy = "ecole")
-    private List<AnneeScolaire> anneeScolaires;
+    //@OneToMany(mappedBy = "ecole")
+    //private List<AnneeScolaire> anneeScolaires;
     
-    @OneToMany(mappedBy = "ecole")
-    private List<Utilisateur> utilisateurs;
+    //@OneToMany(mappedBy = "ecole")
+    //private List<Utilisateur> utilisateurs;
     
 }

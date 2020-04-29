@@ -5,6 +5,7 @@
  */
 package com.vetisolutions.smartcalc.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,7 +27,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 @Entity
-public class HistoriqueNote {
+public class HistoriqueNote implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

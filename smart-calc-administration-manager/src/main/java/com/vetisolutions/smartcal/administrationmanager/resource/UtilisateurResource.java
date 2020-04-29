@@ -54,6 +54,18 @@ public class UtilisateurResource {
         return utilisateurService.create(u);
     }
     
+    @ApiOperation(value = "Return user with the given id", response = Response.class)
+    @ApiResponses(value = {
+        @ApiResponse(code = 200, message = "Operation successfully"),
+    })
+    @GET
+    @Path("{id}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(value = MediaType.APPLICATION_JSON)
+    public Utilisateur returnOne(@PathParam("id") Long id){
+        return utilisateurService.findOneById(id);
+    }
+    
     @ApiOperation(value = "Allows you to modify the characteristics of a user", response = Response.class)
     @ApiResponses(value = {
         @ApiResponse(code = 200, message = "User modification successfully"),
@@ -73,6 +85,7 @@ public class UtilisateurResource {
         @ApiResponse(code = 403, message = "Failed User list!")
     })
     @GET
+    @Path("/all")
     @Produces(MediaType.APPLICATION_JSON)
     public Page<Utilisateur> returnAll(@DefaultValue("0") @QueryParam("from")int from,
             @DefaultValue("50") @QueryParam("to") int to) throws DataAccessException {

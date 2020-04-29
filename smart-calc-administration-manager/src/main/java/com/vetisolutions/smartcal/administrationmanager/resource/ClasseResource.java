@@ -7,6 +7,7 @@ package com.vetisolutions.smartcal.administrationmanager.resource;
 
 import com.vetisolutions.smartcal.administrationmanager.service.ClasseService;
 import com.vetisolutions.smartcalc.entities.Classe;
+import com.vetisolutions.smartcalc.entities.dto.ClasseDTO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -49,8 +50,20 @@ public class ClasseResource {
     @Path("/ajoutClasse")
     @Consumes(value= MediaType.APPLICATION_JSON)
     @Produces(value= MediaType.APPLICATION_JSON)
-    public Classe ajoutClasse(Classe cl){
+    public Classe ajoutClasse(ClasseDTO cl){
         return classeService.create(cl);
+    }
+    
+    @ApiOperation(value = "Return classe with the given id", response = Response.class)
+    @ApiResponses(value = {
+        @ApiResponse(code = 200, message = "Operation successfully"),
+    })
+    @GET
+    @Path("{id}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(value = MediaType.APPLICATION_JSON)
+    public Classe returnOne(@PathParam("id") Long id){
+        return classeService.findOneById(id);
     }
     
     @ApiOperation(value = "Allows you to modify the characteristics of a class", response = Response.class)
@@ -72,6 +85,7 @@ public class ClasseResource {
         @ApiResponse(code = 403, message = "Failed class list!")
     })
     @GET
+    @Path("/all")
     @Produces(MediaType.APPLICATION_JSON)
     public Page<Classe> returnAll(@DefaultValue("0") @QueryParam("from")int from,
             @DefaultValue("50") @QueryParam("to") int to) throws DataAccessException {

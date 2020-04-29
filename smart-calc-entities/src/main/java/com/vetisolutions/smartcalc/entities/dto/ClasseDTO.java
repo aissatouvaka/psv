@@ -5,7 +5,6 @@
  */
 package com.vetisolutions.smartcalc.entities.dto;
 
-import com.vetisolutions.smartcalc.entities.TypeClasse;
 import lombok.Data;
 
 /**

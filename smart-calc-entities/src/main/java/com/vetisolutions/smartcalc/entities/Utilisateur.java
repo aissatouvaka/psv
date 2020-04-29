@@ -8,6 +8,7 @@ package com.vetisolutions.smartcalc.entities;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.vetisolutions.smartcalc.entities.enumeration.Gender;
 import com.vetisolutions.smartcalc.entities.enumeration.Role;
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -34,7 +35,7 @@ import lombok.ToString;
 @Entity
 @Inheritance(strategy = InheritanceType .JOINED)
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class Utilisateur {
+public class Utilisateur implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

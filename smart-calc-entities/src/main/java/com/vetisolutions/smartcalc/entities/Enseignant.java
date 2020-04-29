@@ -14,6 +14,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 /**
  *
@@ -29,12 +31,15 @@ public class Enseignant extends Utilisateur implements Serializable {
     @Column
     private String speciality;
     
+    @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(mappedBy = "enseignant")
     private List<Cours> courses;
     
+    @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(mappedBy = "enseignant")
     private List<EmpoieDeTemps> empoieDeTempses;
     
+    @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(mappedBy = "enseignant")
     private List<PresenceEnseignant> presences;
     

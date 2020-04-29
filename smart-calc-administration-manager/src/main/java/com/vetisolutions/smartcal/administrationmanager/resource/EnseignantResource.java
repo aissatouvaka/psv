@@ -54,6 +54,18 @@ public class EnseignantResource {
         return enseignantService.create(en);
     }
     
+    @ApiOperation(value = "Return user with the given id", response = Response.class)
+    @ApiResponses(value = {
+        @ApiResponse(code = 200, message = "Operation successfully"),
+    })
+    @GET
+    @Path("{id}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(value = MediaType.APPLICATION_JSON)
+    public Enseignant returnOne(@PathParam("id") Long id){
+        return enseignantService.findOneById(id);
+    }
+    
     @ApiOperation(value = "Allows you to modify the characteristics of a teacher", response = Response.class)
     @ApiResponses(value = {
         @ApiResponse(code = 200, message = "Teacher modification successfully"),
@@ -73,6 +85,7 @@ public class EnseignantResource {
         @ApiResponse(code = 403, message = "Failed teacher list!")
     })
     @GET
+    @Path("/all")
     @Produces(MediaType.APPLICATION_JSON)
     public Page<Enseignant> returnAll(@DefaultValue("0") @QueryParam("from")int from,
             @DefaultValue("50") @QueryParam("to") int to) throws DataAccessException {

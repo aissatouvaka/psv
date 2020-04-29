@@ -6,6 +6,7 @@
 package com.vetisolutions.smartcalc.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,7 +31,7 @@ import lombok.ToString;
 @Entity
 @Inheritance(strategy = InheritanceType .JOINED)
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public abstract class AbstractWeekCounteur {
+public abstract class AbstractWeekCounteur implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

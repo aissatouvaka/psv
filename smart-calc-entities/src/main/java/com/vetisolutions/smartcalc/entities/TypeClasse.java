@@ -6,6 +6,7 @@
 package com.vetisolutions.smartcalc.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,6 +21,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 /**
  *
@@ -32,7 +35,7 @@ import lombok.ToString;
 @Entity//Hineritence to manage
 @Inheritance(strategy = InheritanceType .JOINED)
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class TypeClasse {
+public class TypeClasse implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -47,9 +50,11 @@ public class TypeClasse {
     @Column
     private String speciality;
     
+    @LazyCollection(LazyCollectionOption.FALSE)
     @OneToMany(mappedBy = "typeClasse")
     private List<Discipline> disciplines;
     
+    @LazyCollection(LazyCollectionOption.FALSE)
     @ManyToOne
     private Ecole ecole;
     

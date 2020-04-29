@@ -5,6 +5,7 @@
  */
 package com.vetisolutions.smartcalc.entities;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
@@ -21,7 +22,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @Entity
-public class AbsenceEleve extends AbstractWeekCounteur{
+public class AbsenceEleve extends AbstractWeekCounteur implements Serializable{
     
     @ManyToOne(optional = false)
     private Eleve eleve;

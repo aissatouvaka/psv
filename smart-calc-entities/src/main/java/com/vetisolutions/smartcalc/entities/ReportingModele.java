@@ -5,6 +5,7 @@
  */
 package com.vetisolutions.smartcalc.entities;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,7 +15,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import org.hibernate.annotations.GeneratorType;
 
 /**
  *
@@ -25,7 +25,7 @@ import org.hibernate.annotations.GeneratorType;
 @AllArgsConstructor
 @ToString
 @Entity
-public class ReportingModele {
+public class ReportingModele implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
